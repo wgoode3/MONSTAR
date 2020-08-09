@@ -9,6 +9,7 @@
     
     <div class="row">
     
+        <!-- Registration Form -->
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header bg-dark text-light">Sign Up</div>
@@ -26,12 +27,12 @@
 	                    </div>
 	                    <div class="form-group">
 	                        <label>Password:</label>
-	                        <form:input path="password" class="form-control" />
+	                        <form:password path="password" class="form-control" />
 	                        <form:errors path="password" class="text-danger" />
 	                    </div>
 	                    <div class="form-group">
 	                        <label>Confirm:</label>
-	                        <form:input path="confirm" class="form-control" />
+	                        <form:password path="confirm" class="form-control" />
 	                        <form:errors path="confirm" class="text-danger" />
 	                    </div>
                         <input type="submit" value="Sign Up" class="btn btn-block btn-info" />
@@ -40,11 +41,12 @@
             </div>
         </div>
         
+        <!-- Login Form -->
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header bg-dark text-light">Sign In</div>
                 <div class="card-body">
-                    <c:if test="${ valid == false }">
+                    <c:if test="${ validLogin == false }">
                         <p class="text-danger">Invalid login attempt!</p>
                     </c:if>
                     <form action="/sign_in" method="post">
@@ -54,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <label>Password:</label>
-                            <input type="text" name="password" class="form-control" />
+                            <input type="password" name="password" class="form-control" />
                         </div>
                         <input type="submit" class="btn btn-block btn-info" value="Sign In" />
                     </form>

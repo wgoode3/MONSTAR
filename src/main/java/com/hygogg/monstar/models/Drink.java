@@ -16,6 +16,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 @Entity
 @Table(name="drinks")
 public class Drink {
@@ -24,19 +25,19 @@ public class Drink {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-    @Size(min = 1, message="Brand is required")
-    @Size(max = 100, message="Brand must be shorter than 100 characters")
+    @Size(min = 1, message="Brand is required!")
+    @Size(max = 100, message="Brand must be shorter than 100 characters!")
     private String brand;
     
-    @Size(min = 1, message="Name is required")
-    @Size(max = 100, message="Name must be shorter than 100 characters")
+    @Size(min = 1, message="Name is required!")
+    @Size(max = 100, message="Name must be shorter than 100 characters!")
     private String name;
     
-    @Size(min = 1, message="Description is required")
-    @Size(max = 200, message="Description must be shorter than 200 characters")
+    @Size(min = 1, message="Description is required!")
+    @Size(max = 200, message="Description must be shorter than 200 characters!")
     private String description;
     
-    @Min(value=0, message="Calories cannot be less than 0")
+    @Min(value=0, message="Calories cannot be less than 0!")
     private Integer calories;
     
     @Column(updatable=false)

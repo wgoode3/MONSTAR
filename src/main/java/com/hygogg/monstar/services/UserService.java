@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.hygogg.monstar.models.User;
 import com.hygogg.monstar.repositories.UserRepository;
 
+
 @Service
 public class UserService {
 

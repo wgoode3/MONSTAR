@@ -30,7 +30,7 @@ public class UserController {
 	@RequestMapping("/sign_in")
 	public String signIn(Model model, HttpServletRequest request) {
 		model.addAttribute("user", new User());
-		model.addAttribute("valid", request.getParameter("valid"));
+		model.addAttribute("validLogin", request.getParameter("validLogin"));
 		return "signIn.jsp";
 	}
 	
@@ -38,7 +38,7 @@ public class UserController {
 	public String login(@RequestParam Map<String, String> body, HttpSession session) {
 		User u = userService.login(body.get("email"), body.get("password"));
 		if(u == null) {
-			return "redirect:/sign_in?valid=false";
+			return "redirect:/sign_in?validLogin=false";
 		}
 		session.setAttribute("user", u);
 		return "redirect:/";
