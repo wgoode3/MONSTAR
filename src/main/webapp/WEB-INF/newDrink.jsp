@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label>Calories:</label>
-                            <input type="text" name="calories" class="form-control" />
+                            <input type="number" name="calories" class="form-control" value="0" />
                             <form:errors path="calories" class="text-danger" />
                         </div>
                         <input type="submit" value="Add a Drink" class="btn btn-block btn-dark" />

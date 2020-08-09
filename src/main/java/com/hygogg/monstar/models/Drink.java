@@ -22,13 +22,16 @@ public class Drink {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min = 1, max = 200)
+    @Size(min = 1, message="Brand is required")
+    @Size(max = 100, message="Brand must be shorter than 100 characters")
     private String brand;
-	@Size(min = 1, max = 200)
+    @Size(min = 1, message="Name is required")
+    @Size(max = 100, message="Name must be shorter than 100 characters")
     private String name;
-    @Size(min = 10, max = 200)
+    @Size(min = 1, message="Description is required")
+    @Size(max = 200, message="Description must be shorter than 200 characters")
     private String description;
-    @Min(0)
+    @Min(value=0, message="Calories cannot be less than 0")
     private Integer calories;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)

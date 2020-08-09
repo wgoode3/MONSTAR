@@ -17,7 +17,7 @@ import com.hygogg.monstar.services.DrinkService;
 @Controller
 public class HomeController {
 	
-	public final DrinkService drinkService;
+	private final DrinkService drinkService;
 	
 	public HomeController(DrinkService drinkService) {
 		this.drinkService = drinkService;
