@@ -27,11 +27,7 @@ public class DrinkService {
     
     public Drink getOne(Long id) {
     	Optional<Drink> drink = drinkRepo.findById(id);
-    	if(drink.isPresent()) {    		
-    		return drink.get();
-    	} else {
-    		return null;
-    	}
+    	return drink.isPresent() ? drink.get() : null;
     }
     
     public Drink update(Drink d) {

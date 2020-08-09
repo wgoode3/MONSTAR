@@ -6,7 +6,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page isErrorPage="true" %>    
 
-<t:Layout>  
+<t:_layout>  
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
             <div class="card">
@@ -44,4 +44,4 @@
             </div>
         </div>
     </div>
-</t:Layout>
+</t:_layout>

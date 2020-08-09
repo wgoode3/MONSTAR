@@ -5,15 +5,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<t:Layout> 
+<t:_layout> 
 	<c:forEach items="${drinks}" var="drink">
 	    <div class="card mb-3">
 	       <div class="card-header bg-dark text-light">${drink.brand} ${drink.name}</div>
 	       <div class="card-body">	           
-		      <p>${drink.calories} Cal</p>
+		      <p>${drink.calories} Calories</p>
 		      <p>${drink.description}</p>
 		      <a href="/drinks/${drink.id}" class="btn btn-outline-info">Edit</a>
 	       </div>
 	    </div>
 	</c:forEach>
-</t:Layout>
+</t:_layout>

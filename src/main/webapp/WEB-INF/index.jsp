@@ -5,9 +5,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<t:Layout> 
+<t:_layout> 
     <div class="jumbotron">
         <h1>MONST★R</h1>
         <p>Energy Drink Reviews</p>
     </div>
-</t:Layout>
+</t:_layout>

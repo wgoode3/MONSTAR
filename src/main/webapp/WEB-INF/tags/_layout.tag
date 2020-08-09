@@ -1,7 +1,8 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags/"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags/"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>   
-<%@tag description="Overall Page template" pageEncoding="UTF-8"%>
+<%@ tag description="Overall Page template" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,14 @@
 	                <a class="nav-link" href="/drinks/new">New Drink</a>
 	            </li>
 	        </ul>
-	        <a class="btn btn-info" href="/logout">Sign Out</a>
+	        <% if (session.getAttribute("user") == null) { %>
+	           <a class="btn btn-outline-info" href="/sign_in">Sign In</a>
+		    <% } else {%>
+    	        <form action="/sign_out" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="submit" class="btn btn-outline-danger" value="Sign Out" />                        
+                </form>
+		    <% } %>
 	    </div>
 	</nav>
 	
@@ -35,6 +43,7 @@
     </div>
     
     <script src="/js/nav.js"></script>
+
 
 </body>
 </html>
