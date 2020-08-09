@@ -7,11 +7,12 @@
 
 <t:Layout> 
 	<c:forEach items="${drinks}" var="drink">
-	    <div class="card mb-5">
+	    <div class="card mb-3">
 	       <div class="card-header bg-dark text-light">${drink.brand} ${drink.name}</div>
 	       <div class="card-body">	           
 		      <p>${drink.calories} Cal</p>
 		      <p>${drink.description}</p>
+		      <a href="/drinks/${drink.id}" class="btn btn-outline-info">Edit</a>
 	       </div>
 	    </div>
 	</c:forEach>

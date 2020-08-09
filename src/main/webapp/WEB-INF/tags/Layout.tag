@@ -30,7 +30,7 @@
 	    </div>
 	</nav>
 	
-    <div class="container py-5">
+    <div class="container py-3">
         <jsp:doBody />
     </div>
     

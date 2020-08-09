@@ -11,8 +11,8 @@
 	<groupId>com.hygogg.monstar</groupId>
 	<artifactId>monstar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>monster</name>
-	<description>Demo project for Spring Boot</description>
+	<name>monstar</name>
+	<description>MONSTAR - Energy Drink Reviews</description>
 
 	<properties>
 		<java.version>1.8</java.version>

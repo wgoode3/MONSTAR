@@ -4,14 +4,16 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags/" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page isErrorPage="true" %>    
 
 <t:Layout>  
     <div class="row">
         <div class="col-sm-8 offset-sm-2">
             <div class="card">
-                <div class="card-header bg-dark text-light">Add a Drink</div>
+                <div class="card-header bg-dark text-light">Edit Drink</div>
                 <div class="card-body">
-                    <form:form action="/drinks" method="post" modelAttribute="drink">
+                    <form:form action="/drinks/${drink.id}" method="post" modelAttribute="drink">
+                        <input type="hidden" name="_method" value="put">
                         <div class="form-group">
                             <label>Brand:</label>
                             <form:input path="brand" class="form-control" />
@@ -32,8 +34,12 @@
                             <form:input path="calories" class="form-control" />
                             <form:errors path="calories" class="text-danger" />
                         </div>
-                        <input type="submit" value="Add a Drink" class="btn btn-block btn-dark" />
-                    </form:form>	       	               
+                        <input type="submit" value="Edit Drink" class="btn btn-block btn-dark" />
+                    </form:form>  
+                    <form action="/drinks/${drink.id}" method="post" class="mt-3">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="submit" class="btn btn-block btn-danger" value="Remove" />                        
+                    </form>
                 </div>
             </div>
         </div>
