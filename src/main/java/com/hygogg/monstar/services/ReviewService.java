@@ -20,10 +20,8 @@ public class ReviewService {
 	// return null if a review already exists for this user and this drink
 	public Review create(Review r) {
 		List<Review> matches = reviewRepo.findMatchingReviews(r.getUser().getId(), r.getDrink().getId());
-		if(matches.size() > 0) {
-			return null;
-		}
-		return reviewRepo.save(r);
+		System.out.println(matches);
+		return matches.size() > 0 ? null : reviewRepo.save(r);
 	}
 
 }

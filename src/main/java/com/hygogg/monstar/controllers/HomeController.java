@@ -98,8 +98,8 @@ public class HomeController {
     	return "drink.jsp";
     }
     
-    @RequestMapping(value="/drink/{id}/review", method=RequestMethod.POST)
-    public String leaveReview(@Valid @ModelAttribute("review") Review r, @PathVariable("id") Long id, BindingResult result, Model model, HttpSession session) {
+    @RequestMapping(value="/drinks/{id}/review", method=RequestMethod.POST)
+    public String leaveReview(@Valid @ModelAttribute("review") Review r, BindingResult result, @PathVariable("id") Long id, Model model, HttpSession session) {
     	if(r.getUser() == null) {
     		return "redirect:/drinks/" + id;
     	}

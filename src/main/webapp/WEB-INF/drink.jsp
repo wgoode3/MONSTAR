@@ -17,10 +17,10 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item bg-dark text-light">Reviews</li>
-                <c:forEach items="${drink.reviews}" var="review">
+                <c:forEach items="${drink.reviews}" var="rev">
                     <li class="list-group-item">
-                        ${review.rating} stars
-                        ${review.content}
+                        ${rev.rating} stars
+                        ${rev.reviewContent}
                     </li>
                 </c:forEach>
             </ul>
@@ -29,7 +29,7 @@
             <div class="card">
                 <div class="card-header bg-dark text-light">Leave a Review</div>
                 <div class="card-body">
-                    <form:form action="/drink/${drink.id}/review" method="post" modelAttribute="review">
+                    <form:form action="/drinks/${drink.id}/review" method="post" modelAttribute="review">
                         <input type="hidden" name="user" value="${user.id}" />
                         <input type="hidden" name="drink" value="${drink.id}" />
                         <div class="form-group">
@@ -44,8 +44,8 @@
                         </div>
                         <div class="form-group">
                             <label>Review:</label>
-                            <form:textarea path="content" class="form-control" />
-                            <form:errors path="content" class="text-danger" />
+                            <form:textarea path="reviewContent" class="form-control" />
+                            <form:errors path="reviewContent" class="text-danger" />
                         </div>
                         <input type="submit" value="Leave a Review" class="btn btn-block btn-dark" />
                     </form:form>                           

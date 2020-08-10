@@ -29,9 +29,9 @@ public class Review {
 	@Max(5)
 	private Integer rating;
 	
-	@Size(min=10, message="Your review must be 10 characters or longer")
-	@Size(max=200, message="Your review cannot be longer than 200 characters")
-	private String content;
+	@Size(min = 10, message="Your review must be 10 characters or longer")
+	@Size(max = 200, message="Your review cannot be longer than 200 characters")
+	private String reviewContent;
 	
 	@Column(updatable=false)
     private Date createdAt;
@@ -64,12 +64,12 @@ public class Review {
 		this.rating = rating;
 	}
 
-	public String getContent() {
-		return content;
+	public String getReviewContent() {
+		return reviewContent;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setReviewContent(String reviewContent) {
+		this.reviewContent = reviewContent;
 	}
 
 	public Date getCreatedAt() {
