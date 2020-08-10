@@ -35,7 +35,7 @@
 	                        <form:password path="confirm" class="form-control" />
 	                        <form:errors path="confirm" class="text-danger" />
 	                    </div>
-                        <input type="submit" value="Sign Up" class="btn btn-block btn-info" />
+                        <input type="submit" value="Sign Up" class="btn btn-block btn-dark" />
                     </form:form>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                             <label>Password:</label>
                             <input type="password" name="password" class="form-control" />
                         </div>
-                        <input type="submit" class="btn btn-block btn-info" value="Sign In" />
+                        <input type="submit" class="btn btn-block btn-dark" value="Sign In" />
                     </form>
                 </div>
             </div>

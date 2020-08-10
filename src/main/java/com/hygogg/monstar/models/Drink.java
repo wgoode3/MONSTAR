@@ -1,13 +1,19 @@
 package com.hygogg.monstar.models;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -47,7 +53,19 @@ public class Drink {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    public Drink(String brand,String name, String description, Integer calories) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User user;
+    
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "reviews", 
+        joinColumns = @JoinColumn(name = "drink_id"), 
+        inverseJoinColumns = @JoinColumn(name = "user_id")
+    )     
+    private List<Review> reviews;
+
+	public Drink(String brand,String name, String description, Integer calories) {
     	this.brand = brand;
     	this.name = name;
     	this.description = description;
@@ -63,7 +81,7 @@ public class Drink {
     
     public Drink() {}
     
-	public Long getId() {
+    public Long getId() {
 		return id;
 	}
 	
@@ -118,8 +136,24 @@ public class Drink {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
+	public User getUser() {
+		return user;
+	}
 	
-    @PrePersist
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public List<Review> getReviews() {
+		return reviews;
+	}
+	
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
+	}
+
+	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
     }

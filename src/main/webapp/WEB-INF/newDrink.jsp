@@ -12,6 +12,7 @@
                 <div class="card-header bg-dark text-light">Add a Drink</div>
                 <div class="card-body">
                     <form:form action="/drinks" method="post" modelAttribute="drink">
+                        <input type="hidden" name="user" value="${user.id}" />
                         <div class="form-group">
                             <label>Brand:</label>
                             <form:input path="brand" class="form-control" />

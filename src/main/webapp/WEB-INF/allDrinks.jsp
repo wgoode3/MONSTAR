@@ -12,7 +12,8 @@
 	       <div class="card-body">	           
 		      <p>${drink.calories} Calories</p>
 		      <p>${drink.description}</p>
-		      <a href="/drinks/${drink.id}" class="btn btn-outline-info">Edit</a>
+		      <a href="/drinks/${drink.id}" class="btn btn-outline-info">View</a>
+		      <a href="/drinks/${drink.id}/edit" class="btn btn-outline-info">Edit</a>
 	       </div>
 	    </div>
 	</c:forEach>
