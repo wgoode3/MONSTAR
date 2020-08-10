@@ -17,11 +17,14 @@ public class ReviewService {
 		this.reviewRepo = reviewRepo;
 	}
 	
-	// return null if a review already exists for this user and this drink
-	public Review create(Review r) {
+	// return true if a review already exists for this user and this drink
+	public Boolean reviewExists(Review r) {
 		List<Review> matches = reviewRepo.findMatchingReviews(r.getUser().getId(), r.getDrink().getId());
-		System.out.println(matches);
-		return matches.size() > 0 ? null : reviewRepo.save(r);
+		return matches.size() > 0;
+	}
+	
+	public Review create(Review r) {
+		return reviewRepo.save(r);
 	}
 
 }

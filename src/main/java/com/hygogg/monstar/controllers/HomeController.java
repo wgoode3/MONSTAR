@@ -103,11 +103,14 @@ public class HomeController {
     	if(r.getUser() == null) {
     		return "redirect:/drinks/" + id;
     	}
+    	if(reviewService.reviewExists(r)) {
+    		result.rejectValue("reviewContent", "Unique", "You have already reviewed this drink!");
+    	}
     	if(result.hasErrors()) {
     		model.addAttribute("drink", drinkService.getOne(id));
     		model.addAttribute("user", session.getAttribute("user"));
     		return "drink.jsp";
-    	}
+    	}    
     	reviewService.create(r);
     	return "redirect:/drinks/" + id;
     }
